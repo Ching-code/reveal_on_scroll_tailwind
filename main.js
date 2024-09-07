@@ -106,8 +106,10 @@ const ObserverOptions = {
 const slideDownObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
-      entry.target.classList.add('animate-slideDown')
-      entry.target.classList.remove('opacity-0', '-translate-y-8')
+      if(!entry.target.classList.contains('animate-slideDown')) {
+        entry.target.classList.add('animate-slideDown')
+        entry.target.classList.remove('opacity-0', '-translate-y-8')
+      }
     } else {
       entry.target.classList.remove('animate-slideDown')
       entry.target.classList.add('opacity-0', '-translate-y-8')
@@ -123,14 +125,27 @@ const sectionDelaySlideDownObserver = new IntersectionObserver(entries => {
 
     if(entry.isIntersecting) {
       elements.forEach((element, index) => {
-        const delay = 500
-        setTimeout(() => {
-          element.classList.add('animate-slideDown')
-          element.classList.remove('opacity-0', '-translate-y-8')
-        }, index * delay)
+        // 確保動畫不重複執行
+        if(!element.classList.contains('animate-slideDown')) {
+          const delay = 500
+          const timeoutId = setTimeout(() => {
+            element.classList.add('animate-slideDown')
+            element.classList.remove('opacity-0', '-translate-y-8')
+          }, index * delay)
+
+          // 把 timeoutId 存起來
+          element.dataset.timeoutId = timeoutId
+        }
       })
     } else {
       elements.forEach(element => {
+        // 清除計時器
+        const timeoutId = element.dataset.timeoutId
+
+        if(timeoutId) {
+          clearTimeout(timeoutId)
+          delete element.dataset.timeoutId
+        }
         element.classList.remove('animate-slideDown')
         element.classList.add('opacity-0', '-translate-y-8')
       })
@@ -142,8 +157,10 @@ const sectionDelaySlideDownObserver = new IntersectionObserver(entries => {
 const slideLeftObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
-      entry.target.classList.add('animate-slideLeft')
-      entry.target.classList.remove('opacity-0', '-translate-x-40')
+      if(!entry.target.classList.contains('animate-slideLeft')) {
+        entry.target.classList.add('animate-slideLeft')
+        entry.target.classList.remove('opacity-0', '-translate-x-40')
+      }
     } else {
       entry.target.classList.remove('animate-slideLeft')
       entry.target.classList.add('opacity-0', '-translate-x-40')
@@ -155,8 +172,10 @@ const slideLeftObserver = new IntersectionObserver(entries => {
 const slideRightObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
-      entry.target.classList.add('animate-slideRight')
-      entry.target.classList.remove('opacity-0', 'translate-x-40')
+      if(!entry.target.classList.contains('animate-slideRight')) {
+        entry.target.classList.add('animate-slideRight')
+        entry.target.classList.remove('opacity-0', 'translate-x-40')
+      }
     } else {
       entry.target.classList.remove('animate-slideRight')
       entry.target.classList.add('opacity-0', 'translate-x-40')
@@ -168,8 +187,10 @@ const slideRightObserver = new IntersectionObserver(entries => {
 const scaleUpObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
-      entry.target.classList.add('animate-scaleUp')
-      entry.target.classList.remove('opacity-0', 'scale-50')
+      if(!entry.target.classList.contains('animate-scaleUp')) {
+        entry.target.classList.add('animate-scaleUp')
+        entry.target.classList.remove('opacity-0', 'scale-50')
+      }
     } else {
       entry.target.classList.remove('animate-scaleUp')
       entry.target.classList.add('opacity-0', 'scale-50')
