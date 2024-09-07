@@ -156,10 +156,10 @@ const slideRightObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
       entry.target.classList.add('animate-slideRight')
-      entry.target.classList.remove('opacity-0', '-translate-x-40')
+      entry.target.classList.remove('opacity-0', 'translate-x-40')
     } else {
       entry.target.classList.remove('animate-slideRight')
-      entry.target.classList.add('opacity-0', '-translate-x-40')
+      entry.target.classList.add('opacity-0', 'translate-x-40')
     }
   })
 }, ObserverOptions)
