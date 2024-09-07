@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- remix icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+
+  <!-- swiper css -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+  <link href="./output.css" rel="stylesheet">
+  <title>Tailwind RWD</title>
+</head>
+<body>
+  <header id="navbar" class="bg-purple-950 fixed w-full top-0 left-0 z-50">
+    <nav class="container flex items-center justify-between h-16 sm:h-20">
+      <div class="sm:text-2xl">Reveal On Scroll</div>
+
+      <div id="nav-menu" class="absolute top-0 right-[-100%] min-h-[100dvh] w-full
+        bg-purple-950/80 backdrop-blur-sm flex items-center justify-center 
+        duration-300 overflow-hidden
+        lg:static lg:min-h-fit lg:bg-transparent lg:w-auto">
+        <ul class="flex flex-col items-center gap-8
+        lg:flex-row">
+          <li><a href="#home" class="nav-link active">HOME</a></li>
+          <li><a href="#about" class="nav-link">ABOUT</a></li>
+          <li><a href="#popular" class="nav-link">POPULAR</a></li>
+          <li><a href="#review" class="nav-link">REVIEW</a></li>
+        </ul>
+      </div>
+      <div class="text-xl sm:text-3xl cursor-pointer z-50 lg:hidden">
+        <i id="nav-toggle" class="ri-menu-4-fill"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="relative">
+      <div class="container">
+        <!-- blob1 -->
+        <div class="w-64 h-64 bg-purple-700 rounded-full blur-3xl
+        -z-10 opacity-40 absolute top-1/2 left-1/2
+        -translate-x-1/2 -translate-y-1/2"></div>
+
+        <!-- blob2 -->
+        <div class="w-64 h-64 bg-purple-700 rounded-full blur-3xl
+        -z-10 opacity-40 absolute top-0 left-0"></div>
+
+        <div class="flex flex-col items-center gap-5 lg:flex-row">
+          <!-- content -->
+          <div class="slide-down w-full space-y-5 lg:w-1/2">
+            <h1 class="font-Jost text-purple-300">
+              Reveal Title
+            </h1>
+            <p class="text-slate-300 font-Jost">
+              Lorem ipsum dolor sit amet consectetur, adipisicing
+              elit. At fugit tenetur magnam repellat ipsa nisi et molestiae,
+              dolorum error atque, maiores qui reprehenderit, eos magni iure
+              temporibus est alias voluptate incidunt explicabo cum harum! Accusamus!
+            </p>
+
+            <div class="flex flex-col gap-2 sm:flex-row
+            md:gap-4 lg:pt-5 xl:pt-10">
+              <button class="btn">
+                <span>SHOW</span>
+                <i class="ri-timeline-view"></i>
+              </button>
+              <button class="btn btn_outline">
+                <span>MORE</span>
+                <i class="ri-more-line"></i>
+              </button>
+            </div>
+
+            <p class="text-xs font-Jost text-slate-300">30 days free</p>
+
+            <div class="flex items-center gap-5 text-lg lg:pt-10">
+              <i class="ri-facebook-fill text-slate-300 hover:text-purple-500 duration-300 cursor-pointer text-3xl"></i>
+              <i class="ri-twitter-x-fill text-slate-300 hover:text-purple-500 duration-300 cursor-pointer text-3xl"></i>
+              <i class="ri-instagram-line text-slate-300 hover:text-purple-500 duration-300 cursor-pointer text-3xl"></i>
+              <i class="ri-line-fill text-slate-300 hover:text-purple-500 duration-300 cursor-pointer text-3xl"></i>
+            </div>
+          </div>
+
+          <!-- image -->
+          <div class="w-full relative lg:w-1/2">
+            <img class="scale-up w-full object-cover"
+            src="./assets/alexandru-acea-0mNBmaWHu0k-unsplash.jpg" alt="home_image">
+            <div class="absolute -top-5 -right-10 opacity-80 xl:-top-20 animate-movingY">
+              <i class="ri-donut-chart-fill text-6xl text-purple-500"></i>
+              <p class="text-6xl text-purple-500">JOIN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- service -->
+    <div class="service bg-white text-slate-500 py-20">
+      <div class="section-delay-slide-down container w-full grid grid-cols-1 gap-8
+      md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <!-- card1 -->
+        <div class="card-slide-down service__card border border-purple-900 p-5 cursor-pointer
+        rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+          <div class="flex items-center gap-5">
+            <i class="ri-truck-line text-3xl md:text-4xl xl:text-5xl"></i>
+            <p class="md:text-lg font-bold">
+              快速 <br>
+              運輸
+            </p>
+          </div>
+          <p class="font-Jost">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Libero cupiditate iure temporibus molestiae sit corrupti fugiat
+            expedita, inventore iusto a.
+          </p>
+        </div>
+        <!-- card2 -->
+        <div class="card-slide-down service__card border border-purple-900 p-5 cursor-pointer
+        rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+          <div class="flex items-center gap-5">
+            <i class="ri-truck-line text-3xl md:text-4xl xl:text-5xl"></i>
+            <p class="md:text-lg font-bold">
+              優良 <br>
+              客戶服務
+            </p>
+          </div>
+          <p class="font-Jost">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Libero cupiditate iure temporibus molestiae sit corrupti fugiat
+            expedita, inventore iusto a.
+          </p>
+        </div>
+        <!-- card3 -->
+        <div class="card-slide-down service__card border border-purple-900 p-5 cursor-pointer
+        rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+          <div class="flex items-center gap-5">
+            <i class="ri-truck-line text-3xl md:text-4xl xl:text-5xl"></i>
+            <p class="md:text-lg font-bold">
+              原產地 <br>
+              商品
+            </p>
+          </div>
+          <p class="font-Jost">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Libero cupiditate iure temporibus molestiae sit corrupti fugiat
+            expedita, inventore iusto a.
+          </p>
+        </div>
+        <!-- card4 -->
+        <div class="card-slide-down service__card border border-purple-900 p-5 cursor-pointer
+        rounded-md hover:shadow-2xl hover:-translate-y-1 duration-300 space-y-5">
+          <div class="flex items-center gap-5">
+            <i class="ri-truck-line text-3xl md:text-4xl xl:text-5xl"></i>
+            <p class="md:text-lg font-bold">
+              值得的 <br>
+              價格
+            </p>
+          </div>
+          <p class="font-Jost">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Libero cupiditate iure temporibus molestiae sit corrupti fugiat
+            expedita, inventore iusto a.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- about -->
+    <section id="about" class="relative overflow-hidden">
+      <div class="absolute -top-8 -right-12 opacity-50">
+        <img src="https://picsum.photos/300/200" alt=""
+        class="w-40 md:w-52 xl:w-64">
+      </div>
+      <div class="slide-down flex flex-col items-center gap-3 text-center
+      mb-10 md:mb-20">
+        <h2 class="title">關於我們</h2>
+        <p class="max-w-2xl">熱門商品</p>
+      </div>
+      <div class="container space-y-10 xl:skew-y-0">
+        <!-- item1 -->
+        <div class="flex flex-col items-center lg:flex-row gap-5">
+          <!-- image -->
+          <div class="slide-left w-full lg:w-1/2">
+            <img src="./assets/frankie-VghbBAYqUJ0-unsplash.jpg" alt="about_image"
+            class="w-full sm:w-2/3 lg:w-full xl:w-2/3 mx-auto">
+          </div>
+          <!-- content -->
+          <div class="slide-right w-full lg:w-1/2">
+            <div class="space-y-5">
+              <h3>
+                做出屬於你的 <span class="text-purple-500">原始</span><br>商品
+              </h3>
+              <p class="to-slate-300 font-Jost">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolores eius excepturi similique, illo quia molestias sapiente sint voluptates! Officia?
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- item2 -->
+        <div class="flex flex-col items-center lg:flex-row-reverse gap-5">
+          <!-- image -->
+          <div class="slide-right w-full lg:w-1/2">
+            <img src="./assets/shri-cFOqLh7ZZJw-unsplash.jpg" alt="about_image"
+            class="w-full sm:w-2/3 lg:w-full xl:w-2/3 mx-auto">
+          </div>
+          <!-- content -->
+          <div class="slide-left w-full lg:w-1/2">
+            <div class="space-y-5">
+              <h3>
+                做出屬於你的 <span class="text-purple-500">原始</span><br>商品
+              </h3>
+              <p class="to-slate-300 font-Jost">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolores eius excepturi similique, illo quia molestias sapiente sint voluptates! Officia?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- popular -->
+    <section id="popular" class="bg-white">
+      <div class="slide-down flex flex-col items-center gap-3 text-center
+      mb-48">
+        <h2 class="title">Popular</h2>
+        <p class="max-w-2xl text-slate-500">獲得更多資訊</p>
+      </div>
+
+      <div class="section-delay-slide-down container w-full grid grid-cols-1 gap-x-8 gap-y-36
+      md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <!-- card1 -->
+        <div class="card-slide-down popular_card bg-purple-950 p-10 pt-24 rounded-md relative">
+          <img src="./assets/bryan-natanael-hR8l1s4u8QE-unsplash.jpg" alt="popular_image"
+          class="w-3/4 aspect-[4/3] object-cover absolute -top-5 left-1/2
+          transform -translate-x-1/2 -translate-y-1/2 duration-500">
+          <p>card content</p>
+          <h3>Card 1</h3>
+
+          <div class="text-purple-500 text-xs py-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-half-fill"></i>
+            <i class="ri-star-line text-gray-400"></i>
+            <i class="ri-star-line text-gray-400"></i>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-xl">$5</p>
+
+            <button class="bg-purple-500 px-4 py-1 rounded-sm text-xl">
+              <i class="ri-shopping-cart-fill"></i>
+            </button>
+          </div>
+        </div>
+        <!-- card2 -->
+        <div class="card-slide-down popular_card bg-purple-950 p-10 pt-24 rounded-md relative">
+          <img src="assets/girl-with-red-hat-Z6SXt1v5tP8-unsplash.jpg" alt="popular_image"
+          class="w-3/4 aspect-[4/3] object-cover absolute -top-5 left-1/2
+          transform -translate-x-1/2 -translate-y-1/2 duration-500">
+          <p>card content</p>
+          <h3>Card 2</h3>
+
+          <div class="text-purple-500 text-xs py-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-half-fill"></i>
+            <i class="ri-star-line text-gray-400"></i>
+            <i class="ri-star-line text-gray-400"></i>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-xl">$5</p>
+
+            <button class="bg-purple-500 px-4 py-1 rounded-sm text-xl">
+              <i class="ri-shopping-cart-fill"></i>
+            </button>
+          </div>
+        </div>
+        <!-- card3 -->
+        <div class="card-slide-down popular_card bg-purple-950 p-10 pt-24 rounded-md relative">
+          <img src="assets/pew-nguyen-n5rVz02PO-g-unsplash.jpg" alt="popular_image"
+          class="w-3/4 aspect-[4/3] object-cover absolute -top-5 left-1/2
+          transform -translate-x-1/2 -translate-y-1/2 duration-500">
+          <p>card content</p>
+          <h3>Card 3</h3>
+
+          <div class="text-purple-500 text-xs py-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-half-fill"></i>
+            <i class="ri-star-line text-gray-400"></i>
+            <i class="ri-star-line text-gray-400"></i>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-xl">$5</p>
+
+            <button class="bg-purple-500 px-4 py-1 rounded-sm text-xl">
+              <i class="ri-shopping-cart-fill"></i>
+            </button>
+          </div>
+        </div>
+        <!-- card4 -->
+        <div class="card-slide-down popular_card bg-purple-950 p-10 pt-24 rounded-md relative">
+          <img src="assets/niklas-veenhuis-rhVD9wlnO_I-unsplash.jpg" alt="popular_image"
+          class="w-3/4 aspect-[4/3] object-cover absolute -top-5 left-1/2
+          transform -translate-x-1/2 -translate-y-1/2 duration-500">
+          <p>card content</p>
+          <h3>Card 4</h3>
+
+          <div class="text-purple-500 text-xs py-3">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-half-fill"></i>
+            <i class="ri-star-line text-gray-400"></i>
+            <i class="ri-star-line text-gray-400"></i>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <p class="text-xl">$5</p>
+
+            <button class="bg-purple-500 px-4 py-1 rounded-sm text-xl">
+              <i class="ri-shopping-cart-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- review -->
+    <section id="review" class="mb-20 md:mb-28 overflow-hidden">
+      <div class="slide-down flex flex-col items-center gap-3 text-center
+      mb-10 md:mb-20">
+        <h2 class="title">客戶資訊</h2>
+        <p class="max-w-2xl">觀看更多</p>
+      </div>
+
+      <div class="container">
+        <div class="slide-down swiper py-12">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <div class="flex flex-col gap-5 bg-purple-900
+              rounded-md p-6">
+                <p class="font-Jost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem placeat facilis iure, consectetur alias.</p>
+                <div class="flex items-center">
+                  <img src="https://picsum.photos/200/200?random=1" alt="review_image"
+                  class="w-12 h-12 rounded-full">
+                  <div class="ml-4">
+                    <p class="text-purple-500 uppercase">Lorem</p>
+                    <p>DD</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="flex flex-col gap-5 bg-purple-900
+              rounded-md p-6">
+                <p class="font-Jost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem placeat facilis iure, consectetur alias.</p>
+                <div class="flex items-center">
+                  <img src="https://picsum.photos/200/200?random=2" alt="review_image"
+                  class="w-12 h-12 rounded-full">
+                  <div class="ml-4">
+                    <p class="text-purple-500 uppercase">Lorem</p>
+                    <p>DD</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="flex flex-col gap-5 bg-purple-900
+              rounded-md p-6">
+                <p class="font-Jost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem placeat facilis iure, consectetur alias.</p>
+                <div class="flex items-center">
+                  <img src="https://picsum.photos/200/200?random=3" alt="review_image"
+                  class="w-12 h-12 rounded-full">
+                  <div class="ml-4">
+                    <p class="text-purple-500 uppercase">Lorem</p>
+                    <p>DD</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="flex flex-col gap-5 bg-purple-900
+              rounded-md p-6">
+                <p class="font-Jost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem placeat facilis iure, consectetur alias.</p>
+                <div class="flex items-center">
+                  <img src="https://picsum.photos/200/200?random=4" alt="review_image"
+                  class="w-12 h-12 rounded-full">
+                  <div class="ml-4">
+                    <p class="text-purple-500 uppercase">Lorem</p>
+                    <p>DD</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="flex flex-col gap-5 bg-purple-900
+              rounded-md p-6">
+                <p class="font-Jost">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem placeat facilis iure, consectetur alias.</p>
+                <div class="flex items-center">
+                  <img src="https://picsum.photos/200/200?random=5" alt="review_image"
+                  class="w-12 h-12 rounded-full">
+                  <div class="ml-4">
+                    <p class="text-purple-500 uppercase">Lorem</p>
+                    <p>DD</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-slate-100 text-purple-950 py-10 relative">
+    <!-- 社群 icon -->
+    <div class="container my-10">
+      <div class="border-b border-purple-500 relative">
+        <div class="absolute top-0 transform -translate-y-1/2
+        left-0 right-0 max-w-56 mx-auto">
+          <div class="bg-slate-100 text-2xl text-center space-x-2">
+            <i class="ri-facebook-fill hover:text-purple-500
+            duration-300 cursor-pointer"></i>
+            <i class="ri-twitter-x-fill hover:text-purple-500
+            duration-300 cursor-pointer"></i>
+            <i class="ri-instagram-line hover:text-purple-500
+            duration-300 cursor-pointer"></i>
+            <i class="ri-line-fill hover:text-purple-500
+            duration-300 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 內容 -->
+    <div class="container grid grid-cols-1 md:grid-cols-2
+    lg:grid-cols-3 xl:grid-cols-4 gap-8 text-center md:text-start">
+      <!-- item1  -->
+      <div class="m-4">
+        <div class="text-7xl text-purple-950 text-center md:text-left">
+          <i class="ri-computer-line"></i>
+          <p class="font-Jost text-xl sm:text-2xl">Item</p>
+        </div>
+      </div>
+
+      <!-- item2 -->
+      <div class="m-4">
+        <p class="mb-5 font-bold text-xl">快速跳轉</p>
+        <div class="flex flex-col gap-1">
+          <a href="#home">Home</a>
+          <a href="#about">ABOUT</a>
+          <a href="#popular">POPULAR</a>
+          <a href="#review">REVIEW</a>
+        </div>
+      </div>
+      
+      <!-- item3 -->
+      <div class="m-4">
+        <p class="mb-5 font-bold text-xl">熱門商品</p>
+        <div class="flex flex-col gap-1">
+          <a href="#">Mouse</a>
+          <a href="#">Keyboard</a>
+          <a href="#">Pad</a>
+          <a href="#">Monitor</a>
+          <a href="#">Microphone</a>
+        </div>
+      </div>
+
+      <!-- item4 -->
+      <div class="m-4">
+        <p class="mb-5 font-bold text-xl">聯絡我們</p>
+        <div class="flex flex-col gap-1">
+          <a href="tel: +88612346 789">+886 123 456 789</a>
+          <a href="mailto:abc@gmail.com">abc@gmail.com</a>
+          <br>
+          <p>Tailwind RWD, 2024</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- copyright -->
+    <div class="container">
+      <p class="text-center mt-10 opacity-50">Copyright &copy; 2024 Tailwind RWD. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- scroll up -->
+  <a href="#" class="fixed right-4 -bottom-1/2 bg-purple-500 shadow-sm
+  inline-block px-3 py-1 md:px-4 md:py-2 rounded-md text-lg z-50
+  hover:-translate-y-1 duration-300" id="scroll-up">
+    <i class="ri-arrow-up-line"></i>
+  </a>
+
+  <!-- swiper js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- gsap -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
